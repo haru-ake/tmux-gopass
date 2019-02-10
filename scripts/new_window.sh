@@ -2,6 +2,8 @@
 
 # $1 ... tmux pane ID
 
+export GOPASS_NOCOLOR=true
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CURRENT_DIR/variables.sh"
