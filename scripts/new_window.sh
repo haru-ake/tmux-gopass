@@ -18,4 +18,4 @@ if ! which $gopass_filter_program > /dev/null 2>&1; then
     return
 fi
 
-tmux new-window tmux\ send-keys\ \-t\ $1\ \"\$\($gopass_path\ show\ \-o\ \-f\ \$\($gopass_path\ list\ \-f\ \|\ $gopass_filter_program\)\)\"
+tmux new-window tmux\ send-keys\ \-t\ $1\ \"\$\(export\ GPG_TTY\=\$\(tty\)\;\ $gopass_path\ show\ \-o\ \-f\ \$\($gopass_path\ list\ \-f\ \|\ $gopass_filter_program\)\)\"
