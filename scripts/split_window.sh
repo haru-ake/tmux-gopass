@@ -31,4 +31,4 @@ elif [ -n "$gopass_pane_size" ]; then
     options="$options -l $gopass_pane_size"
 fi
 
-tmux split-window $options tmux\ send-keys\ \-t\ $1\ \"\$\(export\ GPG_TTY\=\$\(tty\)\;\ $gopass_path\ show\ \-o\ \-f\ \$\($gopass_path\ list\ \-f\ \|\ $gopass_filter_program\)\)\"
+tmux split-window $options tmux\ send-keys\ \-t\ $1\ \"\$\(export\ GPG_TTY\=\$\(tty\)\;\ $gopass_path\ show\ \-o\ \-f\ \$\($gopass_path\ list\ \-f\ \|\ $gopass_filter_program\)\ 2\>\ \/dev\/null\)\"
